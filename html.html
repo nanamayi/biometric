@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biometric Key Logging System</title>
+  <link rel="stylesheet" href="css">
+</head>
+<body>
+
+  <div class="dashboard">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a onclick="showSection('register')">Register</a></li>
+        <li><a onclick="showSection('login')">Login</a></li>
+        <li><a onclick="showSection('history')">History</a></li>
+      </ul>
+    </div>
+
+    <div class="main">
+
+     
+      <div id="registerSection">
+        <h1>Register New User</h1>
+
+        <div class="register-horizontal">
+          <input type="text" id="regName" placeholder="Full Name">
+          <select id="regCourse">
+            <option value="">Course</option>
+            <option value="BSCPE">BSCPE</option>
+            <option value="BSCE">BSCE</option>
+            <option value="BSEE">BSEE</option>
+            <option value="BSIE">BSIE</option>
+            <option value="BSME">BSME</option>
+          </select>
+          <select id="regSection">
+            <option value="">Program</option>
+            <option value="Evening">Evening</option>
+            <option value="Day">Day</option>
+          </select>
+        </div>
+
+        <video id="video" width="400" height="250" autoplay></video>
+        <button onclick="capturePhoto()">Capture Photo</button>
+        <canvas id="canvas" width="200" height="150" style="display:none;"></canvas>
+        <button onclick="registerUser()">Register</button>
+      </div>
+
+     
+      <div id="loginSection">
+        <h1>Login Existing User</h1>
+        <select id="userDropdown">
+          <option value="">-- Select User --</option>
+        </select>
+        <button onclick="loginExistingUser()">Login</button>
+
+        <div id="userSection">
+          <div id="userDetails"></div>
+          <div id="borrowSection"></div>
+          <div id="returnSection"></div>
+        </div>
+      </div>
+
+   
+      <div id="historySection">
+        <h1>History</h1>
+       
+        <div id="historyContainer"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js"></script>
+</body>
+</html>
